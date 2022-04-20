@@ -1,18 +1,13 @@
-import { AppProps } from 'next/app';
-import Head from 'next/head';
-import './styles.css';
+import '../styles/globals.css';
+import type { AppProps } from 'next/app';
+import { BoardApiProvider } from '../context/BoardApi.context';
 
-function CustomApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Head>
-        <title>Welcome to got-front!</title>
-      </Head>
-      <main className="app">
-        <Component {...pageProps} />
-      </main>
-    </>
+    <BoardApiProvider>
+      <Component {...pageProps} />
+    </BoardApiProvider>
   );
 }
 
-export default CustomApp;
+export default MyApp;
