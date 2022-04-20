@@ -1,6 +1,7 @@
 # game-of-life-dto
 
 This library was generated with [Nx](https://nx.dev).
+It includes dto and types files for backend and frontend app parts.
 
 ## Building
 
