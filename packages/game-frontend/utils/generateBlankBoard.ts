@@ -1,4 +1,4 @@
-import { Board, Row } from '@gameoflife/game-of-life';
+import { Board, Row } from '../types/Board';
 
 const generateOneDimensionArray = (number: number): Row =>
   [...Array(number).keys()].map(() => 0);

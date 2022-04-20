@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { Stack, Button, Box, Alert, Typography, TextField } from '@mui/material';
 import { BoardGrid } from '../BoardGrid/index';
-import { Board, GameOfLife } from '@gameoflife/game-of-life';
+import { Board } from '../../types/Board';
 import { generateBlankBoard } from '../../utils/generateBlankBoard';
-
+import { useBoardApi } from '../../context/BoardApi.context';
 
 export const BoardWidget = () => {
-  const [boardObject, setBoardObject] = React.useState<GameOfLife | null>(null);
+  const context = useBoardApi();
+  const [boardId, setBoardId] = React.useState<string | null>(null);
   const [boardState, setBoardState] = React.useState<Board | null>(null);
   const [startingCellNumber, setStartingCellNumber] = React.useState<number>(0);
   const [message, setMessage] = React.useState<string | null>(null);
@@ -18,23 +19,31 @@ export const BoardWidget = () => {
     setMaxStartingCellsNumber(boardDimension*boardDimension*0.2);
   };
 
-  const tickGame = async () => {
-    console.log('Tick game');
-    setMessage(null);
-    if (boardObject === null) {
-      const board = new GameOfLife(boardState);
-      setBoardObject(board);
-      setBoardState(board.tick().getState())
-    } else {
-      console.log('only tick');
-      setBoardState(boardObject.tick().getState());
-    }
+  const getNewBoardState = async () => {
+    if (boardId === null) return;
+    console.log('Ill be tick');
+    const newBoard = await context.api.tick({ id: boardId });
+    return newBoard;
   };
+
+  const tickGame = async () => {
+    const newBoardState = await getNewBoardState();
+    setBoardState(newBoardState.result);
+  }
+
+  const establishBoard = async () => {
+    setMessage(null);
+    const response = await context.api.sendInitialBoard({
+      board: boardState,
+    });
+    console.log(`Id board from setting: ${response.boardId}`);
+    setBoardId(response.boardId);
+  }
 
   const isGameLoaded = boardState !== null;
 
   const onCellClick = (rowIndex: number, cellIndex: number) => {
-    if (boardObject) return;
+    if (boardId) return;
     if (startingCellNumber >= maxStartingCellsNumber ) {
       setMessage(`No more than ${maxStartingCellsNumber} starting cells`);
       return;
@@ -54,9 +63,10 @@ export const BoardWidget = () => {
   const restartGame = () => {
     setStartingCellNumber(0);
     setBoardState(generateBlankBoard(boardDimension));
-    setBoardObject(null);
+    setBoardId(null);
   }
 
+  console.log(`Board id: ${boardId}`);
   return (
     <>
       <Stack direction="row" justifyContent="center" alignItems="center">
@@ -82,12 +92,13 @@ export const BoardWidget = () => {
         {isGameLoaded && (
           <>
             <Typography sx={{ mr: '1rem' }}>
-              {boardObject
-                ? 'Your turn'
-                : `Click max ${maxStartingCellsNumber}`}
+              {boardId ? 'Your turn' : `Click max ${maxStartingCellsNumber}`}
             </Typography>
-            <Button variant="contained" onClick={tickGame}>
-              {'Next generation'}
+            <Button
+              variant="contained"
+              onClick={boardId === null ? establishBoard : tickGame}
+            >
+              {boardId === null ? 'Im ready' : 'Next generation'}
             </Button>
           </>
         )}
