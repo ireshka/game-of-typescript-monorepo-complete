@@ -9,8 +9,6 @@ type BoardCellProps = {
 }
 
 export const BoardCell = ({ rowIndex, cellIndex, cellValue, onCellClick }: BoardCellProps) => {
-  // console.log(rowIndex);
-  // console.log(cellIndex);
   const cellColor = cellValue ? 'blue' : 'lightgray';
   return (
     <Box sx={{ aspectRatio: '1/1', backgroundColor: cellColor }} onClick={() => onCellClick(rowIndex, cellIndex)} />

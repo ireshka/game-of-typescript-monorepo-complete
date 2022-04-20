@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Stack, Button, Box, Alert, Typography, TextField } from '@mui/material';
 import { BoardGrid } from '../BoardGrid/index';
-import { Board } from '../../types/Board';
+import { Board } from '@gameoflife/game-of-life-dto';
 import { generateBlankBoard } from '../../utils/generateBlankBoard';
 import { useBoardApi } from '../../context/BoardApi.context';
 

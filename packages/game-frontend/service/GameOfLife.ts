@@ -3,7 +3,7 @@ import {
   InitialResponseDto,
   TickRequestDto,
   TickResponseDto,
-} from '../dto/index';
+} from '@gameoflife/game-of-life-dto';
 import axios from 'axios';
 import { endpoints } from './endpoints';
 
