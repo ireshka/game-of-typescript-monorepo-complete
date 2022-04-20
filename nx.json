@@ -16,5 +16,18 @@
       }
     }
   },
-  "defaultProject": "game-backend"
+  "defaultProject": "game-backend",
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "@emotion/styled",
+        "linter": "eslint"
+      }
+    }
+  }
 }

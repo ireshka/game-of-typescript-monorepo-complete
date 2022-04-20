@@ -2,6 +2,8 @@
   "version": 2,
   "projects": {
     "game-backend": "packages/game-backend",
+    "game-frontend": "packages/game-frontend",
+    "game-frontend-e2e": "packages/game-frontend-e2e",
     "game-of-life": "packages/game-of-life"
   }
 }
