@@ -1,0 +1,62 @@
+{
+  "root": "packages/game-backend",
+  "sourceRoot": "packages/game-backend/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/game-backend",
+        "main": "packages/game-backend/src/main.ts",
+        "tsConfig": "packages/game-backend/tsconfig.app.json",
+        "assets": ["packages/game-backend/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "packages/game-backend/src/environments/environment.ts",
+              "with": "packages/game-backend/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "game-backend:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/game-backend/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/game-backend"],
+      "options": {
+        "jestConfig": "packages/game-backend/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "test:e2e": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/packages/game-backend"
+      ],
+      "options": {
+        "jestConfig": "packages/game-backend/jest-e2e.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

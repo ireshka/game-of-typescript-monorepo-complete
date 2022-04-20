@@ -1,0 +1,20 @@
+{
+  "extends": "@nrwl/workspace/presets/core.json",
+  "npmScope": "gameoflife",
+  "affected": {
+    "defaultBase": "main"
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/nest"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "MDFlZTM4OTUtNmQzNy00NDA3LThjODgtMjRmMGU4Nzg4NDk3fHJlYWQtd3JpdGU="
+      }
+    }
+  },
+  "defaultProject": "game-backend"
+}
