@@ -1,0 +1,32 @@
+{
+  "root": "packages/game-of-life-dto",
+  "sourceRoot": "packages/game-of-life-dto/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/game-of-life-dto",
+        "main": "packages/game-of-life-dto/src/index.ts",
+        "tsConfig": "packages/game-of-life-dto/tsconfig.lib.json",
+        "assets": ["packages/game-of-life-dto/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/game-of-life-dto/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/game-of-life-dto"],
+      "options": {
+        "jestConfig": "packages/game-of-life-dto/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

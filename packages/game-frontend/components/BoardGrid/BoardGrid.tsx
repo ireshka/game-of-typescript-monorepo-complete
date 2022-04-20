@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import { Board } from '@l22-got-monorepo/got-core';
+import { Board } from '../../types/Board';
 import { BoardCell } from '../BoardCell/index';
 
 type BoardGridProps = {

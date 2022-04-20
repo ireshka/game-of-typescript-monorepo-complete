@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@gameoflife/game-of-life": ["packages/game-of-life/src/index.ts"]
+      "@gameoflife/game-of-life": ["packages/game-of-life/src/index.ts"],
+      "@gameoflife/game-of-life-dto": ["packages/game-of-life-dto/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
