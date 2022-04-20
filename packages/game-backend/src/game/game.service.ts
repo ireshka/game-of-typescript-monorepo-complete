@@ -1,14 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { GameOfLife } from '@gameoflife/game-of-life';
-import { InitialResponseDto } from '../dto/initialResponse.dto';
+import { InitialResponseDto, TickRequestDto, GameDto } from '@gameoflife/game-of-life-dto';
 import { Board } from '../utils/Board';
-import { TickRequestDto } from '../dto/tickRequest.dto';
-import { BoardDto } from '../dto/board.dto';
 
 @Injectable()
 export class GameService {
   db = new Board();
-  setInitialBoard(board: BoardDto): InitialResponseDto {
+  setInitialBoard(board: GameDto): InitialResponseDto {
     console.log(board)
     return { boardId: this.db.init(board.board) };
   }

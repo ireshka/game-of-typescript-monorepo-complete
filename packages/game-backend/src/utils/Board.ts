@@ -1,6 +1,4 @@
-type Cell = number;
-type Row = Cell[];
-export type IBoard = Row[];
+import { Board as IBoard } from '@gameoflife/game-of-life-dto';
 
 export class Board {
   private id: number;
