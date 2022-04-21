@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { GameOfLife } from '../service/GameOfLife';
+import { MockService } from '../specs/mockService';
 
 export const BoardApiContext = React.createContext<
-  { api: typeof GameOfLife } | undefined
+  { api: typeof GameOfLife | typeof MockService} | undefined
 >(undefined);
 
 type BoardApiProviderProps = {
