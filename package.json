@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve game-backend",
+    "start": "node dist/packages/game-backend/main.js",
     "local:start:all:dev": "nx run-many --target=serve --all",
     "local:start:all:prod": "nx run-many --target=serve --all --prod",
     "test": "nx run-many --target=test --all",
