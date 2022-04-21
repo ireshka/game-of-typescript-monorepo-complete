@@ -8,4 +8,9 @@ describe('Index', () => {
     const { baseElement } = render(<Index />);
     expect(baseElement).toBeTruthy();
   });
+
+  it('should display page title', () => {
+    const context = render(<Index />);
+    expect(context.getByRole('heading')).toBeTruthy();
+  })
 });
