@@ -1,16 +1,17 @@
 import * as React from 'react';
 import { GameOfLife } from '../service/GameOfLife';
-import { MockService } from '../specs/mockService';
+
+const apiInstance = new GameOfLife();
 
 export const BoardApiContext = React.createContext<
-  { api: typeof GameOfLife | typeof MockService} | undefined
+  { api: GameOfLife } | undefined
 >(undefined);
 
 type BoardApiProviderProps = {
   children: JSX.Element;
 };
 export const BoardApiProvider = ({ children }: BoardApiProviderProps) => {
-  const value = { api: GameOfLife };
+  const value = { api: apiInstance };
   return (
     <BoardApiContext.Provider value={value}>
       {children}

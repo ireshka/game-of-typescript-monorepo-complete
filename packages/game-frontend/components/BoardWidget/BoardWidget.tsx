@@ -82,6 +82,7 @@ export const BoardWidget = () => {
               }
               type="number"
               size="small"
+              label="Board dimension"
             />
           </>
         )}
