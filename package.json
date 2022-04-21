@@ -10,7 +10,7 @@
     "local:start:all:prod": "nx run-many --target=serve --all --prod",
     "test": "nx run-many --target=test --all",
     "build": "nx run-many --target=build --all",
-    "postbuild": "nx build $PROJECT_NAME --prod",
+    "heroku-postbuild": "nx build $PROJECT_NAME --prod",
     "local:build:all": "nx run-many --target=build --all",
     "test:front": "nx test game-frontend",
     "typecheck": "nx run-many --target=tsc --all"
