@@ -49,12 +49,18 @@
     },
     "test:e2e": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/packages/game-backend"
-      ],
+      "outputs": ["coverage/packages/game-backend"],
       "options": {
         "jestConfig": "packages/game-backend/jest-e2e.config.js",
         "passWithNoTests": true
+      }
+    },
+    "tsc": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "tsc",
+        "cwd": "packages/game-backend"
       }
     }
   },

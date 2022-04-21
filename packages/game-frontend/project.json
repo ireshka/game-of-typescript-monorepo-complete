@@ -48,6 +48,14 @@
       "options": {
         "lintFilePatterns": ["packages/game-frontend/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "tsc": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "tsc",
+        "cwd": "packages/game-frontend"
+      }
     }
   },
   "tags": []
