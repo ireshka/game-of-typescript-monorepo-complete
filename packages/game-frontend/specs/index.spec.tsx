@@ -16,9 +16,9 @@ describe('Index', () => {
     );
   });
 
-  // it('should display <BoardWidget /> with starting elements', () => {
-  //   const context = render(<Index />);
-  //   expect(context.getByRole('button')).toHaveTextContent(/start game/i);
-  //   expect(context.getAllByRole(''))
-  // })
+  it('should display <BoardWidget /> with starting elements', () => {
+    const context = render(<Index />);
+    expect(context.getByRole('button')).toHaveTextContent(/start game/i);
+    expect(context.getByLabelText(/board dimension/i)).toBeInTheDocument();
+  })
 });
