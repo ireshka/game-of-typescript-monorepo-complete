@@ -10,6 +10,9 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
+  env: {
+    NEXT_PUBLIC_BACKEND_URL: 'http://localhost:4000'
+  },
 };
 
 module.exports = withNx(nextConfig);
