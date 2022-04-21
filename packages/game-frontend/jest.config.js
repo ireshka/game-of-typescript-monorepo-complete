@@ -7,4 +7,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/packages/game-frontend',
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 };
