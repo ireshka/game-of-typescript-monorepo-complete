@@ -14,5 +14,7 @@ describe('Index', () => {
     expect(context.getByRole('heading')).toHaveTextContent(
       /Game of Typescript Life/i
     );
-  })
+  });
+
+  it('should display <BoardWidget /> with starting elements')
 });

@@ -7,7 +7,6 @@ import { Board } from '../utils/Board';
 export class GameService {
   db = new Board();
   setInitialBoard(board: GameDto): InitialResponseDto {
-    console.log(board)
     return { boardId: this.db.init(board.board) };
   }
 

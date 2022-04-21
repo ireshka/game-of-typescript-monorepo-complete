@@ -21,7 +21,6 @@ export const BoardWidget = () => {
 
   const getNewBoardState = async () => {
     if (boardId === null) return;
-    console.log('Ill be tick');
     const newBoard = await context.api.tick({ id: boardId });
     return newBoard;
   };
@@ -36,7 +35,6 @@ export const BoardWidget = () => {
     const response = await context.api.sendInitialBoard({
       board: boardState,
     });
-    console.log(`Id board from setting: ${response.boardId}`);
     setBoardId(response.boardId);
   }
 
@@ -49,7 +47,6 @@ export const BoardWidget = () => {
       return;
     };
     setStartingCellNumber((prev) => prev + 1);
-    console.log(`Row index: ${rowIndex} - Cell index: ${cellIndex}`);
     setBoardState((prev) => {
       const newBoard = prev.map((row, rIndex) => {
         if (rIndex === rowIndex) {
@@ -66,7 +63,6 @@ export const BoardWidget = () => {
     setBoardId(null);
   }
 
-  console.log(`Board id: ${boardId}`);
   return (
     <>
       <Stack direction="row" justifyContent="center" alignItems="center">
