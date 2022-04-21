@@ -7,7 +7,7 @@
     "local:start:all:dev": "nx run-many --target=serve --all",
     "local:start:all:prod": "nx run-many --target=serve --all --prod",
     "test": "nx run-many --target=test --all",
-    "build": "nx build game-backend",
+    "build": "nx run-many --target=build --all",
     "local:build:all": "nx run-many --target=build --all",
     "test:front": "nx test game-frontend",
     "typecheck": "nx run-many --target=tsc --all"
