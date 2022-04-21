@@ -11,6 +11,8 @@ describe('Index', () => {
 
   it('should display page title', () => {
     const context = render(<Index />);
-    expect(context.getByRole('heading')).toBeTruthy();
+    expect(context.getByRole('heading')).toHaveTextContent(
+      /Game of Typescript Life/i
+    );
   })
 });
