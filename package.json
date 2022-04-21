@@ -7,7 +7,7 @@
     "local:start:all:dev": "nx run-many --target=serve --all",
     "local:start:all:prod": "nx run-many --target=serve --all --prod",
     "test": "nx run-many --target=test --all",
-    "build": "nx run-many --target=build --projects=game-backend",
+    "build": "nx build game-backend",
     "local:build:all": "nx run-many --target=build --all",
     "test:front": "nx test game-frontend",
     "typecheck": "nx run-many --target=tsc --all"
@@ -32,20 +32,7 @@
     "reflect-metadata": "^0.1.13",
     "regenerator-runtime": "0.13.7",
     "rxjs": "^7.0.0",
-    "tslib": "^2.0.0",
-    "nx": "13.10.3",
-    "@nrwl/cli": "13.10.3",
-    "@nrwl/cypress": "13.10.3",
-    "@nrwl/eslint-plugin-nx": "13.10.3",
-    "@nrwl/jest": "13.10.3",
-    "@nrwl/js": "13.10.3",
-    "@nrwl/linter": "13.10.3",
-    "@nrwl/nest": "^13.10.3",
-    "@nrwl/node": "13.10.3",
-    "@nrwl/nx-cloud": "latest",
-    "@nrwl/react": "13.10.3",
-    "@nrwl/web": "13.10.3",
-    "@nrwl/workspace": "13.10.3"
+    "tslib": "^2.0.0"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "11.7.2",
@@ -74,6 +61,19 @@
     "react-test-renderer": "18.0.0",
     "supertest": "^6.2.2",
     "ts-jest": "27.0.5",
-    "typescript": "~4.6.2"
+    "typescript": "~4.6.2",
+    "nx": "13.10.3",
+    "@nrwl/cli": "13.10.3",
+    "@nrwl/cypress": "13.10.3",
+    "@nrwl/eslint-plugin-nx": "13.10.3",
+    "@nrwl/jest": "13.10.3",
+    "@nrwl/js": "13.10.3",
+    "@nrwl/linter": "13.10.3",
+    "@nrwl/nest": "^13.10.3",
+    "@nrwl/node": "13.10.3",
+    "@nrwl/nx-cloud": "latest",
+    "@nrwl/react": "13.10.3",
+    "@nrwl/web": "13.10.3",
+    "@nrwl/workspace": "13.10.3"
   }
 }
