@@ -33,12 +33,7 @@
     "regenerator-runtime": "0.13.7",
     "rxjs": "^7.0.0",
     "tslib": "^2.0.0",
-    "nx": "13.10.3"
-  },
-  "devDependencies": {
-    "@emotion/babel-plugin": "11.7.2",
-    "@nestjs/schematics": "^8.0.0",
-    "@nestjs/testing": "^8.0.0",
+    "nx": "13.10.3",
     "@nrwl/cli": "13.10.3",
     "@nrwl/cypress": "13.10.3",
     "@nrwl/eslint-plugin-nx": "13.10.3",
@@ -46,12 +41,16 @@
     "@nrwl/js": "13.10.3",
     "@nrwl/linter": "13.10.3",
     "@nrwl/nest": "^13.10.3",
-    "@nrwl/next": "^13.10.3",
     "@nrwl/node": "13.10.3",
     "@nrwl/nx-cloud": "latest",
     "@nrwl/react": "13.10.3",
     "@nrwl/web": "13.10.3",
-    "@nrwl/workspace": "13.10.3",
+    "@nrwl/workspace": "13.10.3"
+  },
+  "devDependencies": {
+    "@emotion/babel-plugin": "11.7.2",
+    "@nestjs/schematics": "^8.0.0",
+    "@nestjs/testing": "^8.0.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "13.0.0",
     "@testing-library/react-hooks": "7.0.2",
